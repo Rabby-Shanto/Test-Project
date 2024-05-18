@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 5px;">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label for="customerType" class="col-sm-4 col-form-label">Customer Type</label>
+        <div class="col-sm-8">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="customerType" id="corporate" [(ngModel)]="customerType" value="Corporate" (change)="loadCustomers()">
+            <label class="form-check-label" for="corporate">Corporate</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="customerType" id="individual" [(ngModel)]="customerType" value="Individual" (change)="loadCustomers()">
+            <label class="form-check-label" for="individual">Individual</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="customerName" class="col-sm-4 col-form-label">Customer Name</label>
+        <div class="col-sm-8">
+          <select class="form-control" id="customerName" [(ngModel)]="selectedCustomer">
+            @for(customer of customers; track customer.id){
+              <option [value]="customer.customerName">{{ customer.customerName }}</option>
+            }
+            
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="meetingDate" class="col-sm-4 col-form-label">Date & Time</label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="meetingDate" [(ngModel)]="meetingDate" (ngModelChange)="onDateChange($event)" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group-append" (click)="dp.toggle()">
+              <span class="input-group-text" style="height: 38px; border-radius: 0%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2V15a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm1 0a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v1H0V2zm14 3H2v10h12V5z"/>
+                  <path fill-rule="evenodd" d="M8 7a1 1 0 0 1 0 2h2a1 1 0 0 1 0 2H6a1 1 0 0 1 0-2h2a1 1 0 0 1 0-2zm-2-4h4a1 1 0 0 1 1 1v1H5V4a1 1 0 0 1 1-1z"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <input type="time" class="form-control mt-2" id="meetingTime" [(ngModel)]="meetingTime" (change)="onTimeChange($event)">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="meetingPlace" class="col-sm-4 col-form-label">Meeting Place</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="meetingPlace" placeholder="Meeting place" [(ngModel)]="meetingPlace">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="clientAttendees" class="col-sm-4 col-form-label">Attendees from Client Side</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="clientAttendees" placeholder="Present client side" rows="2" [(ngModel)]="clientAttendees"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="hostAttendees" class="col-sm-4 col-form-label">Attendees from Host Side</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="hostAttendees" placeholder="Present self side" rows="2" [(ngModel)]="hostAttendees"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-12 text-right">
+          <button class="btn btn-primary" (click)="next()">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label for="meetingAgenda" class="col-sm-4 col-form-label">Meeting Agenda</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="meetingAgenda" placeholder="Meeting Agenda" rows="2" [(ngModel)]="meetingAgenda"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="meetingDiscussion" class="col-sm-4 col-form-label">Meeting Discussion</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="meetingDiscussion" placeholder="Meeting Discussion" rows="2" [(ngModel)]="meetingDiscussion"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="meetingDecision" class="col-sm-4 col-form-label">Meeting Decision</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="meetingDecision" placeholder="Meeting Decision" rows="2" [(ngModel)]="meetingDecision"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

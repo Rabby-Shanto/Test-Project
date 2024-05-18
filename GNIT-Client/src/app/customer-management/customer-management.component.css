@@ -1,0 +1,23 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-check {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .form-check-input {
+    margin-right: 5px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100px;
+  }
+ 
+  

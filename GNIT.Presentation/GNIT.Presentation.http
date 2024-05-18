@@ -1,0 +1,6 @@
+@GNIT.Presentation_HostAddress = http://localhost:5177
+
+GET {{GNIT.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,34 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  select, input {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  table {
+    margin-top: 20px;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .btn-sm {
+    margin-right: 5px;
+  }
+  
